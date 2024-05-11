@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div style="text-align:center; border: 1px solid black; margin: bottom 5px;">
+    Congratulations!!! <br>
+    Your Order has been placed <br> <br>
+    INVOICE <br>
+    <p>
+    <p>Name = {{name}}</p>
+    <p>Phone Number = {{phono}}</p>
+    <p>Email ID = {{email}}</p>
+    <p>Address = {{address}}</p></p><br>
+    <table>
+        <th>Dish</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <tr>
+            {% for i in cart %}
+            <td>{{i}}</td>
+            {% endfor %}
+            <td>{{total}}</td>
+        </tr>
+    </table>
+    </div>
+    {% endblock %}
+</body>
+</html>

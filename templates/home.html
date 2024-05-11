@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    {% block content %}
+    <p style="text-align: center;">
+        <img src="{% static 'main2.jpg' %}" alt="main img" style="width: 40%;">
+    </p>
+
+    <div class="divi">
+        <img class="image" src="{% static 'dal.jpg' %}">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="dishname1" value="Dal Makhani" readonly> <br>
+            <input type="text" name="price1" value="299" readonly> <br>
+            Quantity : <input type="num" name="quantity1" id=""> <br>
+            <input type="submit" value="Add to Cart">
+        </form>
+    </div>
+
+    <div class='divi'>
+        <img src="{% static 'pizza.jpg' %}" class="image">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="dishname2" value="Pizza" readonly> <br>
+            <input name="price2" value="399" readonly> <br>
+            Quantity : <input type="num" name="quantity2" id=""> <br>
+            <input type="submit" value="Add to Cart">
+        </form>
+    </div>
+
+    <div class='divi'>
+        <img class="image" src="{% static 'pasta.jpg' %}">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <input type="text" name="dishname3" value="Pasta" readonly> <br>
+            <input name="price3" value="349" readonly> <br>
+            Quantity : <input type="num" name="quantity3" id=""> <br>
+            <input type="submit" value="Add to Cart">
+        </form>
+    </div>
+
+    <div class="divi">
+        <p><img class="image" src="{% static 'salad.jpg' %}"></p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="dishname4" value="Salad" readonly> <br>
+            <input name="price4" value="249" readonly> <br>
+            Quantity : <input type="num" name="quantity4" id=""> <br>
+            <input type="submit" value="Add to Cart">
+        </form>
+    </div>
+    <script>
+
+    </script>
+    {% endblock %}
+
+</body>
+
+</html>

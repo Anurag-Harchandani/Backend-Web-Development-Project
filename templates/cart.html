@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div style="text-align: center; border: 1px solid black; margin: bottom 5px;">CART <br> <br>
+    <table>
+        <th>Dish</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <tr>
+            {% for i in cart %}
+            <td>{{i}}</td>
+            {% endfor %}
+            <td>{{total}}</td>
+        </tr>
+    </table><br> <br>
+    <form action="bill" method="post">
+        {% csrf_token %}
+        Enter your Name : <input type="text" name="name1"> <br>
+        Enter your Phone Number : <input type="text" name="num"> <br>
+        Enter your Email ID : <input type="text" name="email"> <br>
+        Enter your Address : <input type="text" name="address"> <br>
+        <input type="submit" value="Place Order">
+    </form></div>
+    {% endblock %}
+</body>
+</html>
