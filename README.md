@@ -5,3 +5,7 @@
   College Roll Number: 2231243
   University Roll Number: 22036557112
   Project Submitted to: Samiksha Ma'am
+
+SuperUser has been created
+Username: Admin
+Password: 1234
